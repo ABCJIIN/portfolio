@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background: #000000;
     /* overflow: hidden; */
     /* overflow-x: hidden; */
     /* position: relative; */
@@ -283,9 +284,10 @@ html, body {
     }
   }
 
-  /* .about {
+  .about {
     width: 100%;
-    position: relative;
+    margin-top: 200px;
+    /* position: relative; */
   }
 
   .about .about_inner {
@@ -317,7 +319,7 @@ html, body {
     float: right;
   }
 
-  .project {
+  /* .project {
     width: 100%;
     background: #000000;
   }
