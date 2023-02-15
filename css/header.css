@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+header {
+    position: fixed;
+    width: 100%;
+    background: #000000;
+    z-index: 10;
+}
+
+.header_inner {
+    min-width: 1440px;
+    max-width: 1920px;
+    height: 100px;
+    margin: 0 auto;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_inner .menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.header_inner .menu ul li {
+    width: 100px;
+    text-align: center;
+}

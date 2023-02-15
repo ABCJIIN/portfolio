@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body>
+    <header>
+        <div class="header_inner">
+            <div class="title">WEB PUBLISHER JiIn’s Portfolio</div>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Project</li>
+                    <li>Design</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="home">
+            <div class="home_inner">
+                <div class="star">
+                    <div class="noite"></div>
+                    <div class="constelacao"></div>
+                    <div class="lua">
+                        <div class="textura"></div>
+                    </div>
+                    <div class="chuvaMeteoro"></div>
+                </div>
+                <div class="title">
+                    <div class="h1_wrapper">
+                        <h1>WELCOME TO MY PORTFOLIO!</h1>
+                    </div>
+                    <span>2023</span>
+                </div>
+                <div class="moon"><img src="./img/moon.png" alt="moon"></div>
+                <div class="earth"><img src="./img/earth.png" alt="earth"></div>
+            </div>
+        </section>
+        <section class="about">
+            <!-- <div class="about_inner">
+                <div class="about_photo">
+                    <img src="./img/jeong_ji_in.jpg" >
+                    <div class="about_contents"></div>
+                </div>
+            </div> -->
+        </section>
+        <section class="project">
+            <!-- <div class="project_inner">
+                <div class="sidmool">
+                    <div class="contents">
+                        <h2>01시드물</h2>
+                        <p>프로젝트 소개 : 화장품 브랜드 ‘시드물’의 기존 메인 홈페이지를 중복 카테고리를 제거하고 보다 깔끔한 레이아웃과 디자인으로 리뉴얼</p>
+                        <p>프로젝트 구성 : 웹 메인</p>
+                        <p>제작기간 : 2022.12.15 - 2023.01.16 (실제 소요 기간 약 3주)</p>
+                        <p>기여도 : 100%</p>
+                        <p>Tool : HTML,CSS,JavaScript,jQuery,Adobe Illustrator,Figma</p>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div class="desktop_img">
+                        <img src="./img/sidmool.png">
+                    </div>
+                </div>
+                <div class="movie_shoot">
+
+                </div>
+                <div class="bookeep_onon">
+
+                </div>
+            </div> -->
+        </section>
+        <section class="design">
+            <div class="design_inner"></div>
+        </section>
+    </main>
+    <footer></footer>
+
+    <!-- script -->
+
+    <script>
+        function init(){
+
+//estrelas
+
+var style = ["style1", "style2", "style3", "style4"];
+var tam = ["tam1", "tam1", "tam1", "tam2", "tam3"];
+var opacity = ["opacity1", "opacity1", "opacity1", "opacity2", "opacity2", "opacity3"];
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var estrela = "";
+var qtdeEstrelas = 250;
+var noite = document.querySelector(".constelacao");
+var widthWindow = window.innerWidth;
+var heightWindow = window.innerHeight;
+
+for (var i = 0; i < qtdeEstrelas; i++) {
+  estrela += "<span class='estrela " + style[getRandomArbitrary(0, 4)] + " " + opacity[getRandomArbitrary(0, 6)] + " "
+  + tam[getRandomArbitrary(0, 5)] + "' style='animation-delay: ." +getRandomArbitrary(0, 9)+ "s; left: "
+  + getRandomArbitrary(0, widthWindow) + "px; top: " + getRandomArbitrary(0, heightWindow) + "px;'></span>";
+}
+
+noite.innerHTML = estrela;
+
+//meteoros
+
+var numeroAleatorio = 5000;
+
+setTimeout(function(){
+  carregarMeteoro();
+}, numeroAleatorio);
+
+function carregarMeteoro(){
+  setTimeout(carregarMeteoro, numeroAleatorio);
+  numeroAleatorio = getRandomArbitrary(5000, 10000);
+  var meteoro = "<div class='meteoro "+ style[getRandomArbitrary(0, 4)] +"'></div>";
+  document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = meteoro;
+  setTimeout(function(){
+    document.getElementsByClassName('chuvaMeteoro')[0].innerHTML = "";
+  }, 1000);
+}
+
+}
+
+window.onload = init;
+    </script>
+</body>
+</html>
